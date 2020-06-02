@@ -1,8 +1,16 @@
 {% extends 'admin/adminbase.html.twig' %}
+{% block activeUsers %}
+    active
+{% endblock %}
+{% block title %} {{ title }} {% endblock %}
 {% block body %}
-    <h1>
-        {{ title }}
-    </h1>
-    <h2>Список юзеров</h2>
-    {{form(form)}}
+    <div class="container-fluid">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-12 col-mg-4 col-lg-4">
+                <h2 class="display-4">новый пользователь</h2>
+                {{form(form)}}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
