@@ -1,10 +1,11 @@
 <?php
-
-
 namespace App\Controller\Admin;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class AdminBaseController
+class AdminBaseController extends AbstractController
 {
-
+    public function renderDefault(){
+        return ["title"=>"admin default text"];
+    }
 }

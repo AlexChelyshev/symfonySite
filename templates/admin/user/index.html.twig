@@ -1,0 +1,14 @@
+{% extends 'admin/adminbase.html.twig' %}
+{% block body %}
+    <h1>
+        {{ title }}
+    </h1>
+    <h2>Список юзеров</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.getEmail }}, {{ user.getRoles() | json_encode }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ path('admin_user_create') }}">создать юзера </a>
+
+{% endblock %}

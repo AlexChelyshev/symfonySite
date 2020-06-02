@@ -4,7 +4,11 @@
 namespace App\Controller\Main;
 
 
-class BaseController
-{
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+class BaseController extends AbstractController
+{
+    function renderDefault(){
+        return ["title"=>"default text"];
+    }
 }
