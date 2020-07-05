@@ -10,7 +10,7 @@
                 <h2 class="display-4 mt-4 text-center">Список постов</h2>
                 <ul class="list-group">
                     {% for post_item in post %}
-                        <li>{{ post_item.title }} <a href="{{ path('admin_post_update', {'id': post_item.id}) }}">редактировать</a></li>
+                        <li>{{ post_item.title }} <img style="width: 100px" src="{{ asset('/uploads/post/') }}{{ post_item.image }}" alt=""><a href="{{ path('admin_post_update', {'id': post_item.id}) }}">редактировать</a></li>
                     {% endfor %}
                 </ul>
                 {% if check_category is not empty %}
