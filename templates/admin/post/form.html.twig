@@ -1,0 +1,27 @@
+{% extends 'admin/adminbase.html.twig' %}
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-12 col-mg-4 col-lg-4">
+                <h2 class="display-4">новый пост</h2>
+                {{form(form)}}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-8 col-mg-6 col-lg-6">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <p>{{ message }}</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -25,6 +25,12 @@
                 <li>
                     <a class="nav-link {% block activeUsers %} {% endblock %}" href="{{ path('admin_user') }}">Пользователи</a>
                 </li>
+                <li>
+                    <a class="nav-link " href="{{ path('admin_post') }}">Посты</a>
+                </li>
+                <li>
+                    <a class="nav-link " href="{{ path('admin_category') }}">Категории</a>
+                </li>
             </ul>
             <form class="form-inline">
                     <a href="{{ path('app_logout') }}" class="btn btn-outline-success my-2 my-sm-0" type="submit">Выход</a>

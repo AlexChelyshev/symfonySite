@@ -1,0 +1,39 @@
+{% extends 'admin/adminbase.html.twig' %}
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-12 col-mg-6 col-lg-6">
+                <h2 class="display-4 mt-4 text-center">Список категорий</h2>
+                <ul class="list-group">
+                    {% for category_item in category %}
+
+                        <li>{{ category_item.title }}
+                            <a class="btn-link" href="{{ path('admin_category_update', {'id': category_item.id}) }}">
+                                редактировать
+                            </a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+                <a class="btn btn-block btn-primary mt-3" href="{{ path('admin_category_create') }}">создать категорию </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-8 col-mg-6 col-lg-6">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <p>{{ message }}</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
